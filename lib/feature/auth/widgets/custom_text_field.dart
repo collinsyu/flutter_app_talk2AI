@@ -14,7 +14,7 @@ class CustomTextField extends StatelessWidget {
       this.prefixText,
       this.onTap,
       this.suffixIcon,
-      this.onChanged});
+      this.onChanged, this.fontSize, this.autoFocus, this.maxLength});
 
   final TextEditingController? controller;
   final String? hintText;
@@ -25,16 +25,24 @@ class CustomTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final Widget? suffixIcon;
   final Function(String)? onChanged;
+  final double? fontSize;
+  final int? maxLength;
+  final bool? autoFocus;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onTap: onTap,
       controller: controller,
+      enableInteractiveSelection: false,
+      maxLength: maxLength,
+
       readOnly: readOnly?? false,
       textAlign: textAlign ?? TextAlign.center,
       keyboardType: readOnly == null ? keyboardType : null,
       onChanged: onChanged,
+      style: TextStyle(fontSize: fontSize),
+      autofocus: autoFocus ?? false,
       decoration: InputDecoration(
         isDense: true,
         prefixText: prefixText,

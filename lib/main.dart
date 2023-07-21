@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes:{
         "login":(context) =>   const LoginPage(),
-        "verify":(context) =>   const VerificationPage(),
+        // "verify":(context) =>   const VerificationPage(),
+        "verify":(context) =>   VerificationPage(phoneNumber:ModalRoute.of(context)?.settings!.arguments),
 
         // "/":(context) =>  MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
 
@@ -44,8 +45,8 @@ class MyApp extends StatelessWidget {
       theme: lightTheme(),
       darkTheme: darkTheme(),
       themeMode: ThemeMode.system,
-      home: const VerificationPage(),
-      // home: const WelcomePage(),
+      // home: const VerificationPage(),
+      home: const WelcomePage(),
     );
   }
 }

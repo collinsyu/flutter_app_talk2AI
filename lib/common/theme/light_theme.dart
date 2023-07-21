@@ -6,14 +6,17 @@ import 'package:myapp/common/utils/coloors.dart';
 
 ThemeData lightTheme(){
   final ThemeData base = ThemeData.light();
+  const ColorScheme originalScheme = ColorScheme.light();
+
   return base.copyWith(
-    backgroundColor: Coloors.backgroundLight,
     scaffoldBackgroundColor: Coloors.backgroundLight,
     extensions: [
       CustomThemeExtension.lightMode
     ],
 
       appBarTheme: const AppBarTheme(
+
+          titleTextStyle: TextStyle(fontSize: 18),
           systemOverlayStyle: SystemUiOverlayStyle(
               statusBarColor: Colors.transparent,
               statusBarBrightness: Brightness.dark
@@ -42,6 +45,8 @@ ThemeData lightTheme(){
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
         )
-    ),
+    ), colorScheme: originalScheme.copyWith(
+      background: Coloors.backgroundLight
+  )
   );
 }

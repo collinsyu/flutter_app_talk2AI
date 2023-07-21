@@ -34,6 +34,7 @@ class CustomThemeExtension extends ThemeExtension<CustomThemeExtension> {
   final Color? langBtnHighlightColor;
   final Color? authAppbarTextColor;
 
+
   const CustomThemeExtension({
     this.circleImageColor,
     this.greyColor,

@@ -35,9 +35,10 @@ class _LoginPageState extends State<LoginPage> {
       return showAlertDialog(context: context,
           message: "输入的手机号太短了");
     }
+    // 这里发送请求到后端，校验手机号，发送短信成功之后，在跳转路由
     await Navigator.pushNamed(
         context,
-        "verify",arguments:phone
+        "verify",arguments:"+${countryCodeController.text} $phone"
     );
     
   }

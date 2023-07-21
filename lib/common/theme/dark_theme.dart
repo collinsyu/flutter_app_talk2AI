@@ -7,13 +7,14 @@ import '../extension/custom_theme_extension.dart';
 
 ThemeData darkTheme(){
   final ThemeData base = ThemeData.dark();
+  const ColorScheme originalScheme = ColorScheme.light();
   return base.copyWith(
-    backgroundColor: Coloors.backgroundDark,
     scaffoldBackgroundColor: Coloors.backgroundDark,
       extensions: [
         CustomThemeExtension.darkMode
       ],
     appBarTheme: const AppBarTheme(
+      titleTextStyle: TextStyle(fontSize: 18),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.light
@@ -43,5 +44,8 @@ ThemeData darkTheme(){
         borderRadius: BorderRadius.circular(10)
       )
     ),
+    colorScheme: originalScheme.copyWith(
+      background: Coloors.backgroundDark
+    )
   );
 }
