@@ -17,7 +17,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
         backgroundColor: Theme.of(context).backgroundColor,
         elevation: 0,
         title: Text(
-          'Profile DAta ',
+          'Profile Data ',
           style: TextStyle(
             color: context.theme.authAppbarTextColor
           ),
@@ -28,7 +28,13 @@ class _UserInfoPageState extends State<UserInfoPage> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            
+            Text(
+              'Please provide your name and an optional profile photo.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: context.theme.greyColor
+              )
+            )
           ],
         ),
       ),
