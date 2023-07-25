@@ -89,11 +89,17 @@ class _VerificationPageState extends State<VerificationPage> {
                 controller: codeController,
                 maxLength: 6,
                 keyboardType: TextInputType.number,
-                onChanged: (value){
+                onChanged: (value) async{
                   // 这里监控输入监控吗 如果够位数了，就出发后端你操作
                   if(value.length >5){
                     debugPrint("输入的校验码:$value");
+                  }
 
+                  if(value.length == 6){
+                    await Navigator.pushNamed(
+                        context,
+                        "userinfo",arguments:"yes"
+                    );
                   }
 
                 },

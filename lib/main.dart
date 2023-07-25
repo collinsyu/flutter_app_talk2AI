@@ -6,6 +6,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:myapp/common/theme/dark_theme.dart';
 import 'package:myapp/feature/auth/pages/login_page.dart';
+import 'package:myapp/feature/auth/pages/user_info_page.dart';
 import "package:myapp/feature/welcome/pages/welcome_page.dart";
 
 import 'common/theme/light_theme.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes:{
         "login":(context) =>   const LoginPage(),
-        // "verify":(context) =>   const VerificationPage(),
+        "userinfo":(context) =>   const UserInfoPage(),
         "verify":(context) =>   VerificationPage(phoneNumber:ModalRoute.of(context)?.settings!.arguments),
 
         // "/":(context) =>  MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
